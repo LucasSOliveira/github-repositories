@@ -1,8 +1,10 @@
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
-const token = process.env.REACT_APP_GITHUB_TOKEN;
+const token = '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';
+const api = 'https://api.github.com/graphql';
+
 const httpLink = new HttpLink({
-  uri: process.env.GITHUB_API_URL,
+  uri: api,
   headers: {
     Authorization: `Bearer ${token}`,
   },
