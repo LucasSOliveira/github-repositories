@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.repository-table-height {
+    max-height: calc(100vh - 360px);
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.custom-scrollbar:hover,
+.custom-scrollbar:focus,
+.custom-scrollbar:active {
+    scrollbar-color: #888 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb,
+.custom-scrollbar:focus::-webkit-scrollbar-thumb,
+.custom-scrollbar:active::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    padding: 32px 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+}
+
+.close-button::before,
+.close-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 2px;
+    background-color: black;
+}
+
+.close-button::before {
+    transform: rotate(45deg);
+}
+
+.close-button::after {
+    transform: rotate(-45deg);
+}
+
+@layer base {
+    :root {
+        --background: #0d0d14;
+        --foreground: #f5f6fa;
+
+        --card: #0d0d14;
+        --card-foreground: #f5f6fa;
+
+        --popover: #0d0d14;
+        --popover-foreground: #f5f6fa;
+
+        --primary: #f5f6fa;
+        --primary-foreground: #1c1c1e;
+
+        --secondary: #2c2c2e;
+        --secondary-foreground: #f5f6fa;
+
+        --terteary: #4493f8;
+        --terteary-foreground: #f5f6fa;
+
+        --muted: #5a5a5e;
+        --muted-foreground: #555558;
+
+        --accent: #2c2c2e;
+        --accent-foreground: #f5f6fa;
+
+        --destructive: #4d0000;
+        --destructive-foreground: #f5f6fa;
+
+        --border: #2c2c2e;
+        --input: #2c2c2e;
+        --ring: #36373d;
+
+        --radius: 0.5rem;
+    }
+
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    #root {
+        @apply h-screen flex flex-col;
+    }
+
+}
